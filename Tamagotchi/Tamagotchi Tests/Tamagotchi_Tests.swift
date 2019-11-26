@@ -9,7 +9,7 @@
 import XCTest
 
 class Tamagotchi_Tests: XCTestCase {
-    let tamagotchi = Tamagotchi()
+    let tamagotchi = Tamagotchi(name:"Stephen")
     func testTamagotchiHungerGoesDownWhenSnackIsEaten() {
         //arrange
         
@@ -32,11 +32,16 @@ class Tamagotchi_Tests: XCTestCase {
         XCTAssertEqual(hunger, tamagotchi.getHunger() + 4)
     }
     
-    func testTamagotchiSleepinessGoesDownWhileSleeping() {
-        let sleepiness = tamagotchi.getSleepiness()
-        
-        tamagotchi.setLight("on")
-        tamagotchi.sleep()
+    func testTamagotchiDiesIfToldTo() {
+        tamagotchi.die()
+        XCTAssertEqual(tamagotchi.dead, true)
     }
+    
+    func testTamagotchiPoosWhenToldTo() {
+        tamagotchi.poo()
+        XCTAssertEqual(tamagotchi.needsPoo, false)
+    }
+    
+    func testTamagotchiReturnsAge()
 
 }
