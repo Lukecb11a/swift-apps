@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F28F096323D08CC600260B56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B7C623CDCD0300F6228E /* ViewController.swift */; };
+		F28F096523D08D0300260B56 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B7F223CDCD6400F6228E /* Tamagotchi.swift */; };
 		F2C8B7C323CDCD0300F6228E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B7C223CDCD0300F6228E /* AppDelegate.swift */; };
 		F2C8B7C523CDCD0300F6228E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B7C423CDCD0300F6228E /* SceneDelegate.swift */; };
 		F2C8B7C723CDCD0300F6228E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B7C623CDCD0300F6228E /* ViewController.swift */; };
@@ -281,6 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28F096323D08CC600260B56 /* ViewController.swift in Sources */,
+				F28F096523D08D0300260B56 /* Tamagotchi.swift in Sources */,
 				F2C8B7E523CDCD0400F6228E /* Tamagotchi_appUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

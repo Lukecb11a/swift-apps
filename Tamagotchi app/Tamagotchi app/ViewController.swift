@@ -15,16 +15,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var feedSnack: UIButton!
     @IBOutlet weak var playGame: UIButton!
     
-    let tamagotchi1 = Tamagotchi(name:"Stephen")
+    var myTamagotchi = Tamagotchi(name:"Stephen") {
+        didSet {
+            tamagotchiStats.text = myTamagotchi.displayUserStats()
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tamagotchiStats.text = tamagotchi1.displayUserStats()
+        tamagotchiStats.text = myTamagotchi.displayUserStats()
     }
     
-    @IBAction func feedMeal(_ sender: Any) {
-        tamagotchi1
+    @IBAction func feedMealButton(_ sender: Any) {
+        myTamagotchi.eat(foodType: "meal")
+        updateDisplay()
     }
+    
+    @IBAction func feedStackButton(_ sender: Any) {
+        myTamagotchi.eat(foodType: "snack")
+    }
+    
+    @IBAction func playGameButton(_ sender: Any) {
+        
+    }
+    func updateDisplay() {
+        tamagotchiStats.text = myTamagotchi.displayUserStats()
+    }
+    
+    
 
 }
 

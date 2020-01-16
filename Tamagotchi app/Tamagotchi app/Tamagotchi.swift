@@ -39,6 +39,8 @@ class Tamagotchi {
             hunger -= 4
             happiness += 2
             weight += 8
+        } else {
+            hunger = 100
         }
         if happiness > 10 {
             happiness = 10
@@ -50,7 +52,7 @@ class Tamagotchi {
     
     //play game
     func playGame () {
-        let correctDirection = Int.random(in:1...2)
+        let correctDirection = Int.random(in:1...3)
         if let userGuess = readLine() {
             if String(correctDirection) == userGuess {
                 happiness += 2
