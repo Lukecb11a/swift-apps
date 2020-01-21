@@ -22,6 +22,7 @@ class Tamagotchi {
     var lightOn = true
     var dead = false
     var name = ""
+    var playingGame = false
     
     //initialiser
     init (name:String) {
@@ -51,17 +52,31 @@ class Tamagotchi {
     }
     
     //play game
-    func playGame () {
-        let correctDirection = Int.random(in:1...3)
-        if let userGuess = readLine() {
-            if String(correctDirection) == userGuess {
-                happiness += 2
-                print("Correct!!! Well Done")
+    func playGame (humanChoice: Int) -> String {
+        playingGame = true
+        func findWinner(ch1: Int, ch2:Int) -> Int{
+            if ((ch1 == 1) && (ch2 == 3)) || ((ch1 == 2) && (ch2 == 1)) || ((ch1 == 3) && (ch2 == 2)) {
+                return 1
             } else {
-                print("hard luck")
-                happiness -= 1
+                return 2
             }
         }
+        let choiceArray = ["","rock", "paper", "scissors"]
+        let tamagotchiChoice = Int.random(in:1...3)
+        if tamagotchiChoice == humanChoice {
+            return """
+            You and your Tamamagotchi both picked \(choiceArray[humanChoice]).
+            Please pick again
+            """
+        }
+        if findWinner(ch1: humanChoice, ch2: tamagotchiChoice) == 1 {
+            playingGame = false
+            return "YOU WON!!! You picked \(choiceArray[humanChoice]) and the tamagotchi picked \(choiceArray[tamagotchiChoice])."
+        } else {
+            playingGame = false
+            return "The tamagotchi won :( You picked \(choiceArray[humanChoice]) and the tamagotchi picked \(choiceArray[tamagotchiChoice])"
+        }
+        
     }
     
     //cure illness
@@ -80,8 +95,10 @@ class Tamagotchi {
     }
     
     //random actions
+    func performRandomAction() {
+        let randNum = Int.random(in:1...3)
+    }
     
-    //die
     func die () {
         dead = true
         print("Your tamagotchi died... RIP")
@@ -94,6 +111,7 @@ class Tamagotchi {
             isSick = true
         }
     }
+    
     
     //getters
     func getAge() -> Int{
@@ -118,7 +136,6 @@ class Tamagotchi {
     
     func displayUserStats() -> String {
         return """
-        age: \(age)
         health: \(health)
         weight: \(weight)
         hunger: \(hunger)
