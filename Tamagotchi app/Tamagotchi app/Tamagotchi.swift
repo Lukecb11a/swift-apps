@@ -10,12 +10,11 @@ import Foundation
 
 class Tamagotchi {
     var age = 0
-    var health = 8
+    var health = 25
     var weight = 20
     var isSick = false
     var diciplineLevel = 0
     var needsAttention = false
-    var needsPoo = false
     var hunger = 10
     var happiness = 0
     var sleepiness = 0
@@ -23,6 +22,7 @@ class Tamagotchi {
     var dead = false
     var name = ""
     var playingGame = false
+    var pooOnScreen = false
     
     //initialiser
     init (name:String) {
@@ -96,19 +96,44 @@ class Tamagotchi {
     
     //random actions
     func performRandomAction() {
-        let randNum = Int.random(in:1...3)
+        if health <= 0 {
+            die()
+        }
+        let randNum = Int.random(in:1...100)
+        if randNum < 60 {
+            hunger += 1
+            weight -= 3
+        }
+        if randNum > 90 {
+            diciplineLevel += 2
+            poo()
+        }
+        if randNum < 70 {
+            happiness -= 1
+            sleepiness += 2
+        }
     }
     
-    func die () {
+    func die() {
         dead = true
-        print("Your tamagotchi died... RIP")
     }
     
     func poo () {
-        needsPoo = false
-        let sick = Int.random(in:1...15)
-        if sick == 4 {
+        //put poo on screen
+        pooOnScreen = true
+    }
+    
+    func makeIll() {
+        let randNum = Int.random(in:1...40)
+        if randNum < 5 {
             isSick = true
+        }
+    }
+    
+    func giveMedicine() {
+        let randNum = Int.random(in:1...20)
+        if randNum < 5 {
+            isSick = false
         }
     }
     
@@ -141,6 +166,7 @@ class Tamagotchi {
         hunger: \(hunger)
         happiness: \(happiness)
         sleepiness: \(sleepiness)
+        poo: \(pooOnScreen)
         """
     }
 }

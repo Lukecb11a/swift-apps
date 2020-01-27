@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var playGame: UIButton!
     @IBOutlet var generalText: UILabel!
     @IBOutlet var ageDisplay: UILabel!
+    @IBOutlet var giveMedicine: UIButton!
+    
     
     var timeRemaining = 5
     var timer: Timer?
@@ -75,15 +77,39 @@ class ViewController: UIViewController {
     }
     
     @objc func countdown () {
-        if timeRemaining > 0 {
+        if myTamagotchi.dead {
+            timer?.invalidate()
+            generalText.text = "Your tamagotchi is dead... RIP"
+            feedMeal.isEnabled = false
+            feedSnack.isEnabled = false
+            playGame.isEnabled = false
+            giveMedicine.isEnabled = false
+        }
+        else if timeRemaining > 0 {
             timeRemaining -= 1
+            if myTamagotchi.isSick {
+                myTamagotchi.health -= 1
+            }
+            if myTamagotchi.pooOnScreen {
+                myTamagotchi.makeIll()
+            }
+            
+            updateDisplay()
             
         } else {
             timeRemaining = 5
             myTamagotchi.age += 1
+            if myTamagotchi.age >= 26 {
+                myTamagotchi.dead = true
+            }
+            myTamagotchi.performRandomAction()
             updateDisplay()
     
         }
+    }
+    @IBAction func giveMedicineButton(_ sender: Any) {
+        myTamagotchi.giveMedicine()
+        updateDisplay()
     }
     
     

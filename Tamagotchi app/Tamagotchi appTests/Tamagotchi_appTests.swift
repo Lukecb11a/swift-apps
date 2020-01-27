@@ -60,9 +60,6 @@ class Tamagotchi_appTests: XCTestCase {
         XCTAssertEqual(tamagotchi.dead, true)
     }
     
-    func testTamagotchiPoosWhenToldTo() {
-        tamagotchi.poo()
-        XCTAssertEqual(tamagotchi.needsPoo, false)
-    }
+    
 
 }
