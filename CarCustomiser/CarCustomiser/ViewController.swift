@@ -129,20 +129,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func countdown () {
-        if timeRemaining > 0 {
-            timeRemaining -= 1
-            remainingTime.text = "\(timeRemaining)"
-            
-        } else {
-            timer?.invalidate()
-            engineAndExhaustPackage.isEnabled = false
-            tyresPackage.isEnabled = false
-            goFasterStripes.isEnabled = false
-            vandalism.isEnabled = false
-            nextCarButton.isEnabled = false
-        }
-    }
+    
     
 }
 
