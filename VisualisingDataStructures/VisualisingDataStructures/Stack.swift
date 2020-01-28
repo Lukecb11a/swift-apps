@@ -30,7 +30,7 @@ class Stack {
     }
     
     func output() {
-        var finalStack = [String]
+        var finalStack:[String] = []
         if top > -1 {
             for i in 0...top {
                 finalStack.append(data[i])
