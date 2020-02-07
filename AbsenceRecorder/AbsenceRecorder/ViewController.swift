@@ -18,14 +18,6 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addDummyData()
-        //iterate over every div and print out student names
-        for i in divisions {
-            print(i.code)
-            for j in i.students {
-                print(j)
-            }
-            print()
-        }
         
         updateDateDisplay()
     }
@@ -63,8 +55,16 @@ class ViewController: UITableViewController {
         guard let vc = storyboard?.instantiateViewController(identifier: "DivisionAbsenceViewController") as? DivisionAbsenceViewController else {
             fatalError("Failed to load division absence view controller")
         }
+        let selectedDivision = divisions[indexPath.row]
+        var newAbsence = Absence(date: currentDate)
         
-        vc.division = divisions[indexPath.row]
+        if let absenceExists = selectedDivision.getAbsence (for: currentDate) {
+            newAbsence = absenceExists
+        }
+        
+        selectedDivision.absences.append(newAbsence)
+        vc.absence = newAbsence
+        vc.division = selectedDivision
         
         navigationController?.pushViewController(vc, animated: true)
     }
