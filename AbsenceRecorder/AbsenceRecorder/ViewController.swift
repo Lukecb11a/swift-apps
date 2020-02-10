@@ -19,6 +19,8 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
         addDummyData()
         
+        tableView.selectRow(at: 0, animated: false, scrollPosition: .none)
+        
         updateDateDisplay()
     }
     
@@ -48,23 +50,26 @@ class ViewController: UITableViewController {
         
         cell.textLabel?.text = divisions[indexPath.row].code
         
+        
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "DivisionAbsenceViewController") as? DivisionAbsenceViewController else {
-            fatalError("Failed to load division absence view controller")
-        }
+        
         let selectedDivision = divisions[indexPath.row]
         var newAbsence = Absence(date: currentDate)
-        
         if let absenceExists = selectedDivision.getAbsence (for: currentDate) {
             newAbsence = absenceExists
         }
         
         selectedDivision.absences.append(newAbsence)
-        vc.absence = newAbsence
-        vc.division = selectedDivision
+        
+        guard let vc = storyboard?.instantiateViewController(identifier: "DivisionAbsenceViewController", creator: { coder in
+            return DivisionAbsenceViewController(coder: coder, division: selectedDivision, absence: newAbsence)
+        }) else {
+            fatalError("Failed to load division absence view controller")
+        }
         
         navigationController?.pushViewController(vc, animated: true)
     }
