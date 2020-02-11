@@ -19,7 +19,7 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
         addDummyData()
         
-        tableView.selectRow(at: 0, animated: false, scrollPosition: .none)
+        
         
         updateDateDisplay()
     }
