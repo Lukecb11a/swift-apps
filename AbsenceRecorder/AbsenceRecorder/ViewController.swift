@@ -38,6 +38,8 @@ class ViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         
+        
+        
         navigationItem.title = formatter.string(from: currentDate)
     }
     
@@ -49,6 +51,7 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Division", for: indexPath)
         
         cell.textLabel?.text = divisions[indexPath.row].code
+        
         
         
         
@@ -72,6 +75,51 @@ class ViewController: UITableViewController {
         }
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let allPresent = UIContextualAction(style: .normal, title: "All Present") { action, view, completionHandler in
+            let division = self.divisions[indexPath.row]
+            let absence = Absence(date: self.currentDate, present: division.students)
+            var found = false
+            for i in 0..<division.absences.count {
+                if division.absences[i].takenOn == self.currentDate {
+                    division.absences[i] = absence
+                    found = true
+                }
+            }
+            if found == false {
+                division.absences.append(absence)
+            }
+            tableView.reloadData()
+            completionHandler(true)
+            
+        }
+        return UISwipeActionsConfiguration(actions: [allPresent])
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let allAbsent = UIContextualAction(style: .normal, title: "All Absent") { action, view, completionHandler in
+            let division = self.divisions[indexPath.row]
+            let absence = Absence(date: self.currentDate, present: [])
+            var found = false
+            for i in 0..<division.absences.count {
+                if division.absences[i].takenOn == self.currentDate {
+                    division.absences[i] = absence
+                    found = true
+                }
+            }
+            if found == false {
+                division.absences.append(absence)
+            }
+            
+            tableView.reloadData()
+            completionHandler(true)
+            
+        }
+        return UISwipeActionsConfiguration(actions: [allAbsent])
     }
     
     func addDummyData() {

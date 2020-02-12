@@ -19,6 +19,9 @@
 		F2A21F8F23F2B46E0048B0D1 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A21F8E23F2B46E0048B0D1 /* Student.swift */; };
 		F2A21F9123F2B4860048B0D1 /* CommentCardOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A21F9023F2B4860048B0D1 /* CommentCardOutput.swift */; };
 		F2A21F9323F2B4970048B0D1 /* CommentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A21F9223F2B4970048B0D1 /* CommentGenerator.swift */; };
+		F2A21F9523F2B5A90048B0D1 /* CommentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A21F9423F2B5A90048B0D1 /* CommentCard.swift */; };
+		F2A21F9723F2BDBB0048B0D1 /* SubjectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A21F9623F2BDBB0048B0D1 /* SubjectPickerViewController.swift */; };
+		F2A21F9B23F2BEDD0048B0D1 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A21F9A23F2BEDD0048B0D1 /* SubjectCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		F2A21F8E23F2B46E0048B0D1 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		F2A21F9023F2B4860048B0D1 /* CommentCardOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardOutput.swift; sourceTree = "<group>"; };
 		F2A21F9223F2B4970048B0D1 /* CommentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentGenerator.swift; sourceTree = "<group>"; };
+		F2A21F9423F2B5A90048B0D1 /* CommentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCard.swift; sourceTree = "<group>"; };
+		F2A21F9623F2BDBB0048B0D1 /* SubjectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectPickerViewController.swift; sourceTree = "<group>"; };
+		F2A21F9A23F2BEDD0048B0D1 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 				F2A21F5C23F2B3A60048B0D1 /* AppDelegate.swift */,
 				F2A21F5E23F2B3A60048B0D1 /* SceneDelegate.swift */,
 				F2A21F6023F2B3A60048B0D1 /* ViewController.swift */,
+				F2A21F9623F2BDBB0048B0D1 /* SubjectPickerViewController.swift */,
 				F2A21F6223F2B3A60048B0D1 /* Main.storyboard */,
 				F2A21F6523F2B3A70048B0D1 /* Assets.xcassets */,
 				F2A21F6723F2B3A70048B0D1 /* LaunchScreen.storyboard */,
@@ -118,6 +125,8 @@
 				F2A21F8E23F2B46E0048B0D1 /* Student.swift */,
 				F2A21F9023F2B4860048B0D1 /* CommentCardOutput.swift */,
 				F2A21F9223F2B4970048B0D1 /* CommentGenerator.swift */,
+				F2A21F9423F2B5A90048B0D1 /* CommentCard.swift */,
+				F2A21F9A23F2BEDD0048B0D1 /* SubjectCell.swift */,
 			);
 			path = CommentCardWriter;
 			sourceTree = "<group>";
@@ -272,7 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2A21F8D23F2B4650048B0D1 /* Subject.swift in Sources */,
+				F2A21F9723F2BDBB0048B0D1 /* SubjectPickerViewController.swift in Sources */,
+				F2A21F9523F2B5A90048B0D1 /* CommentCard.swift in Sources */,
 				F2A21F6123F2B3A60048B0D1 /* ViewController.swift in Sources */,
+				F2A21F9B23F2BEDD0048B0D1 /* SubjectCell.swift in Sources */,
 				F2A21F5D23F2B3A60048B0D1 /* AppDelegate.swift in Sources */,
 				F2A21F8F23F2B46E0048B0D1 /* Student.swift in Sources */,
 				F2A21F9123F2B4860048B0D1 /* CommentCardOutput.swift in Sources */,

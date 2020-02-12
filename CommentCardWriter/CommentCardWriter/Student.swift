@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class Student {
+    
+    let name: String
+    var block: String
+    var housemaster: String
+    var tutor: String
+    var subjects: [Subject] = []
+    
+    init(name: String, block: String, housemaster: String, tutor: String) {
+        self.name = name
+        self.block = block
+        self.housemaster = housemaster
+        self.tutor = tutor
+    }
+    
+}

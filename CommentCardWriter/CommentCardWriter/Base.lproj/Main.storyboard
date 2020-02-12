@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,112 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CommentCardWriter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r4-cr-dXb">
+                                <rect key="frame" x="92" y="184.5" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBG-Gr-qR9">
+                                <rect key="frame" x="150" y="178" width="189" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameInputBox:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="GIP-je-GvZ"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Housemaster:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-hk-Ksz">
+                                <rect key="frame" x="35" y="258.5" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ryn-KG-8q6">
+                                <rect key="frame" x="150" y="252" width="189" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="housemasterInputBox:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="kDO-xF-754"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaE-ak-u1H">
+                                <rect key="frame" x="97" y="332.5" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIF-gY-ptv">
+                                <rect key="frame" x="150" y="326" width="189" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tutorInputBox:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="WLc-Z4-uTY"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-8A-RLw">
+                                <rect key="frame" x="97" y="406.5" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fci-h8-tdH">
+                                <rect key="frame" x="150" y="400" width="189" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="blockInputBox:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="xHQ-C4-yEK"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNK-Em-HWM">
+                                <rect key="frame" x="348" y="44" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next &gt;"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PcV-ci-eop"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ryn-KG-8q6" secondAttribute="trailing" constant="75" id="0ih-gI-r83"/>
+                            <constraint firstItem="GBG-Gr-qR9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="134" id="5N2-hm-0ZI"/>
+                            <constraint firstItem="ryn-KG-8q6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="9fZ-KI-gQS"/>
+                            <constraint firstItem="ryn-KG-8q6" firstAttribute="leading" secondItem="Daq-hk-Ksz" secondAttribute="trailing" constant="8" id="Eiq-10-d3H"/>
+                            <constraint firstItem="ryn-KG-8q6" firstAttribute="top" secondItem="GBG-Gr-qR9" secondAttribute="bottom" constant="40" id="G7f-et-6ce"/>
+                            <constraint firstItem="GBG-Gr-qR9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="LkM-pK-pWS"/>
+                            <constraint firstItem="Fci-h8-tdH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="MH4-59-Pup"/>
+                            <constraint firstItem="TIF-gY-ptv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="MaO-WH-dGu"/>
+                            <constraint firstItem="8r4-cr-dXb" firstAttribute="centerY" secondItem="GBG-Gr-qR9" secondAttribute="centerY" id="Nmh-bM-Fwx"/>
+                            <constraint firstItem="BaE-ak-u1H" firstAttribute="centerY" secondItem="TIF-gY-ptv" secondAttribute="centerY" id="O2p-uh-oYs"/>
+                            <constraint firstItem="aZ3-8A-RLw" firstAttribute="centerY" secondItem="Fci-h8-tdH" secondAttribute="centerY" id="QFb-YL-dd8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TIF-gY-ptv" secondAttribute="trailing" constant="75" id="S4L-oF-GVO"/>
+                            <constraint firstItem="TIF-gY-ptv" firstAttribute="leading" secondItem="BaE-ak-u1H" secondAttribute="trailing" constant="8" id="TSg-Ro-ZkY"/>
+                            <constraint firstItem="TIF-gY-ptv" firstAttribute="top" secondItem="ryn-KG-8q6" secondAttribute="bottom" constant="40" id="TzH-yx-cwe"/>
+                            <constraint firstItem="Fci-h8-tdH" firstAttribute="leading" secondItem="aZ3-8A-RLw" secondAttribute="trailing" constant="6" id="U5X-Yd-v6s"/>
+                            <constraint firstItem="Fci-h8-tdH" firstAttribute="top" secondItem="TIF-gY-ptv" secondAttribute="bottom" constant="40" id="f3j-0W-U9B"/>
+                            <constraint firstItem="Daq-hk-Ksz" firstAttribute="centerY" secondItem="ryn-KG-8q6" secondAttribute="centerY" id="gI3-dN-Wac"/>
+                            <constraint firstItem="GBG-Gr-qR9" firstAttribute="leading" secondItem="8r4-cr-dXb" secondAttribute="trailing" constant="8" id="lDf-P1-ter"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fci-h8-tdH" secondAttribute="trailing" constant="75" id="xaZ-zY-fds"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GBG-Gr-qR9" secondAttribute="trailing" constant="75" id="xxR-2o-AEI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="qNK-Em-HWM" id="voM-k0-HCH"/>
+                        <outlet property="studentBlockInput" destination="Fci-h8-tdH" id="3Aq-ZX-Egc"/>
+                        <outlet property="studentHousemasterInput" destination="ryn-KG-8q6" id="Jpj-Ov-Wkl"/>
+                        <outlet property="studentNameInput" destination="GBG-Gr-qR9" id="c7l-PB-Aof"/>
+                        <outlet property="studentTutorInput" destination="TIF-gY-ptv" id="oFG-4Z-wIB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
