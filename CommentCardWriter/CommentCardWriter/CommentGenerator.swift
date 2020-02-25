@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class CommentGenerator {
+    
+    let student: Student
+    
+    init (student: Student) {
+        self.student = student
+    }
+    
+    func comment() -> String{
+        return ""
+    }
+}

@@ -8,3 +8,14 @@
 
 import Foundation
 
+class Subject {
+    
+    let name: String
+    let studentFeelings: String = ""
+    let studentPerformance: String = ""
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+}

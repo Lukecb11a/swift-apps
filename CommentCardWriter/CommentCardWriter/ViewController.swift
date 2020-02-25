@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var studentHousemasterInput: UITextField!
     @IBOutlet var studentTutorInput: UITextField!
     @IBOutlet var studentBlockInput: UITextField!
-    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var nextButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
     
     func checkTextBoxes() {
-        if (studentTutorInput != "") && (studentHousemasterInput != "") && (studentBlockInput != "") && (studentNameInput != "") {
+        if (studentTutorInput.text != "") && (studentHousemasterInput.text != "") && (studentBlockInput.text != "") && (studentNameInput.text != "") {
             nextButton.isEnabled = true
         } else {
             nextButton.isEnabled = false
@@ -44,10 +44,20 @@ class ViewController: UIViewController {
         checkTextBoxes()
     }
     
-    
     @IBAction func nextButtonPressed(_ sender: Any) {
         let student = Student(name: studentNameInput.text!, block: studentBlockInput.text!, housemaster: studentHousemasterInput.text!, tutor: studentTutorInput.text!)
+        
+        guard let vc = storyboard?.instantiateViewController(identifier: "SubjectPickerViewController", creator: { coder in
+            return SubjectPickerViewController(coder: coder, student: student)
+        }) else {
+            fatalError("Failed to load division absence view controller")
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
+
     }
+    
+    
     
 
 
