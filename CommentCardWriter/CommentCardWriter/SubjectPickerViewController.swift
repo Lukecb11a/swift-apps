@@ -16,6 +16,7 @@ class SubjectPickerViewController: UITableViewController {
     init?(coder: NSCoder, student: Student) {
         self.student = student
         super.init(coder: coder)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -43,6 +44,20 @@ class SubjectPickerViewController: UITableViewController {
         let newSubject = Subject(name: possibleSubjects[indexPath.row])
         student.subjects.append(newSubject)
     }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        guard let vc = storyboard?.instantiateViewController(identifier: "PickSubjectForCommentTableViewController", creator: { coder in
+            return PickSubjectForCommentTableViewController(coder: coder, student: self.student)
+        }) else {
+            fatalError("Failed to load division absence view controller")
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+    }
+    
 
 
    

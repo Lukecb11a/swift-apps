@@ -106,7 +106,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Student Profile" id="y3q-RK-y3r">
-                        <barButtonItem key="rightBarButtonItem" title="Next" image="chevron.right" catalog="system" id="MbO-HV-ahq">
+                        <barButtonItem key="rightBarButtonItem" title="Next &gt;" id="MbO-HV-ahq">
                             <connections>
                                 <action selector="nextButtonPressed:" destination="BYZ-38-t0r" id="1uP-4a-3gs"/>
                             </connections>
@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Subject" id="q1G-m9-3CU" customClass="SubjectCell" customModule="CommentCardWriter" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Subject" id="q1G-m9-3CU" customClass="CheckSubjectCell" customModule="CommentCardWriter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q1G-m9-3CU" id="G2U-e6-qGF">
@@ -147,11 +147,53 @@
                             <outlet property="delegate" destination="kO9-T4-3uK" id="A1a-lC-ORv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="w5l-Xu-Xrn"/>
+                    <navigationItem key="navigationItem" id="w5l-Xu-Xrn">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="LC6-lb-h8H">
+                            <connections>
+                                <action selector="backButton:" destination="kO9-T4-3uK" id="0cB-hn-cDZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next &gt;" id="GLv-GW-Nc7">
+                            <connections>
+                                <action selector="nextButton:" destination="kO9-T4-3uK" id="9NC-Ob-e16"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMs-r2-gdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2749.275362318841" y="141.96428571428569"/>
+        </scene>
+        <!--Full View-->
+        <scene sceneID="TSF-M5-fzI">
+            <objects>
+                <viewController id="FKV-BI-Tcw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kkR-hD-5HY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WYP-nD-c8B"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Full View" image="list.dash" catalog="system" id="ptJ-fd-w6f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAm-4O-aCf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5629" y="146"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="skm-AI-MVx">
+            <objects>
+                <viewController id="Gjv-K5-uDh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="05T-ZC-XMD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kdL-TO-9MX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3c-r1-QQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6445" y="150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E1w-vg-ub8">
@@ -189,8 +231,56 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pKZ-r5-LbV">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UN6-Zx-Wmr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eZX-8E-8vI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="L9B-q0-sHu" kind="relationship" relationship="viewControllers" id="KcC-T9-qX2"/>
+                        <segue destination="FKV-BI-Tcw" kind="relationship" relationship="viewControllers" id="lhd-99-4QP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKL-Mk-qxs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3784" y="146"/>
+        </scene>
+        <!--Write Comment Card-->
+        <scene sceneID="Bpo-Jn-EcC">
+            <objects>
+                <tableViewController id="L9B-q0-sHu" customClass="PickSubjectForCommentTableViewController" customModule="CommentCardWriter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sOa-m4-tJO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rmw-yT-M74">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rmw-yT-M74" id="uje-qG-aqw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="L9B-q0-sHu" id="7pB-vF-w6G"/>
+                            <outlet property="delegate" destination="L9B-q0-sHu" id="yBi-dY-kwV"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Write Comment Card" image="square.and.pencil" catalog="system" id="lDm-Bw-raT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Auc-S4-5ni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4706" y="145"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
 </document>

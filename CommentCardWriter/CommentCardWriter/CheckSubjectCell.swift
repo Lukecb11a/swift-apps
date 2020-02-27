@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubjectCell: UITableViewCell {
+class CheckSubjectCell: UITableViewCell {
 
 
     override func setSelected(_ selected: Bool, animated: Bool) {
