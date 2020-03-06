@@ -12,15 +12,16 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
-    let geocoder = CLGeocoder()
     let iTunesAdapter = ITunesAdaptor()
+    let locationManagerDelegate = LocationManagerDelegate()
     
     @IBOutlet var musicRecommendations: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
+        locationManager.delegate = locationManagerDelegate
+        locationManagerDelegate.vc = self
         locationManager.requestLocation()
     }
 
@@ -28,25 +29,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestLocation()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let firstLocation = locations.first {
-            geocoder.reverseGeocodeLocation(firstLocation, completionHandler: { (placemarks, error) in
-                if error != nil {
-                    self.musicRecommendations.text = "could not lookup location so here is your latatude: \(firstLocation.coordinate.latitude.description)"
-                } else {
-                    if let firstPlacemark = placemarks?[0] {
-                        self.iTunesAdapter.getArtists(search: firstPlacemark.locality) { (artists) in
-                            let names = artists?.map{ return $0.artistName}
-                            self.musicRecommendations.text = names?.joined(separator: ", ")
-                        }
-                    }
-                }
-            })
-        }
+    func updateDiaplay(text: String?) {
+        musicRecommendations.text = text
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        musicRecommendations.text = "Could not access user's location."
+    func updateArtistsByLocation(text: String?) {
+        self.iTunesAdapter.getArtists(search: text) { (artists) in
+            let names = artists?.map{ return $0.artistName}
+            self.musicRecommendations.text = names?.joined(separator: ", ")
+        }
     }
     
     

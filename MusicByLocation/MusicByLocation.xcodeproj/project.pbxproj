@@ -15,6 +15,7 @@
 		F27D06CB2407056600B9A204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F27D06C92407056600B9A204 /* LaunchScreen.storyboard */; };
 		F27D06D62407056600B9A204 /* MusicByLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D06D52407056600B9A204 /* MusicByLocationTests.swift */; };
 		F27D06E12407056600B9A204 /* MusicByLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D06E02407056600B9A204 /* MusicByLocationUITests.swift */; };
+		F28D3777241291DF00C23217 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D3776241291DF00C23217 /* LocationManagerDelegate.swift */; };
 		F2927EE7240DB72E00E2063F /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2927EE6240DB72E00E2063F /* ArtistResponse.swift */; };
 		F2927EE9240DB78300E2063F /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2927EE8240DB78300E2063F /* Artist.swift */; };
 		F2B3ED422410FD4400E1A15E /* ITunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B3ED412410FD4400E1A15E /* ITunesAdaptor.swift */; };
@@ -52,6 +53,7 @@
 		F27D06DC2407056600B9A204 /* MusicByLocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicByLocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27D06E02407056600B9A204 /* MusicByLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationUITests.swift; sourceTree = "<group>"; };
 		F27D06E22407056600B9A204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F28D3776241291DF00C23217 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		F2927EE6240DB72E00E2063F /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
 		F2927EE8240DB78300E2063F /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		F2B3ED412410FD4400E1A15E /* ITunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAdaptor.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				F2927EE6240DB72E00E2063F /* ArtistResponse.swift */,
 				F2927EE8240DB78300E2063F /* Artist.swift */,
 				F2B3ED412410FD4400E1A15E /* ITunesAdaptor.swift */,
+				F28D3776241291DF00C23217 /* LocationManagerDelegate.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				F2927EE7240DB72E00E2063F /* ArtistResponse.swift in Sources */,
 				F27D06BF2407056400B9A204 /* AppDelegate.swift in Sources */,
 				F2927EE9240DB78300E2063F /* Artist.swift in Sources */,
+				F28D3777241291DF00C23217 /* LocationManagerDelegate.swift in Sources */,
 				F27D06C12407056400B9A204 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

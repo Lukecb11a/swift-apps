@@ -23,7 +23,7 @@ class ITunesAdaptor {
             else {
                 print("invalid URL")
                 completion (nil)
-                return "Invalid URL, wasn't able to search Itunes"
+                return 
         }
         
         let request = URLRequest(url: url)
