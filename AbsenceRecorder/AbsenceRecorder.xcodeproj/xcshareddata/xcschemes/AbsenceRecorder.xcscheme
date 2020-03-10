@@ -38,6 +38,16 @@
                ReferencedContainer = "container:AbsenceRecorder.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F2A47D5923E2C70C00D4E1DD"
+               BuildableName = "AbsenceRecorderUITests.xctest"
+               BlueprintName = "AbsenceRecorderUITests"
+               ReferencedContainer = "container:AbsenceRecorder.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -122,6 +122,55 @@ class ViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [allAbsent])
     }
     
+    func convertDivisionsToJson() -> String? {
+        let encoder = JSONEncoder()
+        guard let encoded = try? encoder.encode(divisions) else {
+            print("unable to encode divisions into json")
+            return nil
+        }
+        
+        guard let json = String(data: encoded, encoding: .utf8) else {
+            print("Unable to tur encode divisions")
+            return nil
+        }
+        
+        return json
+    }
+    
+    func convertJsonToDivisions(json: Data) -> [Division]? {
+        let decoder = JSONDecoder()
+        guard let decoded = try? decoder.decode([Division].self, from: json) else {
+            return nil
+        }
+        return decoded
+    }
+    
+    func saveDataToFile() {
+        guard let divisionsJson = convertDivisionsToJson() else {
+            return
+        }
+        
+        let filePath = UserDocumentManager.getDocumentsDirectory().appendingPathComponent("divisions.txt")
+        
+        do {
+            try divisionsJson.write(to: filePath, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print("Unable to save by writing to a file")
+        }
+    }
+    
+    func loadDataFromFile() {
+        let filePath = UserDocumentManager.getDocumentsDirectory().appendingPathComponent("divisions.txt")
+        
+        do {
+            let json = try Data(contentsOf: filePath)
+            divisions = convertJsonToDivisions(json: json) ?? []
+        } catch {
+            print("failed to read from file")
+            addDummyData()
+        }
+    }
+    
     func addDummyData() {
         divisions.append(DivisionFactory.createDivision(code: "bY1-1", of: 12))
         divisions.append(DivisionFactory.createDivision(code: "bS3-2", of: 5))

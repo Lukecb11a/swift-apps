@@ -23,13 +23,26 @@ class AbsenceRecorderUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testWhenRecordingAnAbsenceStudentsRemainSelected() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
+        
+        let tablesQuery = XCUIApplication().tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["bY1-1"]/*[[".cells.staticTexts[\"bY1-1\"]",".staticTexts[\"bY1-1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Grey"]/*[[".cells.staticTexts[\"Grey\"]",".staticTexts[\"Grey\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let joelStaticText = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Joel"]/*[[".cells.staticTexts[\"Joel\"]",".staticTexts[\"Joel\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        joelStaticText.tap()
+        joelStaticText.tap()
+        tablesQuery.children(matching: .cell).element(boundBy: 2).staticTexts["Stevenson"].tap()
+        joelStaticText.tap()
+        
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let divisionCell = tablesQuery.cells.element(boundBy: 0)
+        let divisionCellNoAbsence = tablesQuery.cells.element(boundBy: 1)
+        XCTAssertEqual(divisionCell.isSelected, true)
+        XCTAssertEqual(divisionCellNoAbsence.isSelected, false)
     }
 
     func testLaunchPerformance() {
