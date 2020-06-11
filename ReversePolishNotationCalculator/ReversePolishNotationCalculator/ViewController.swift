@@ -168,10 +168,11 @@ class ViewController: UIViewController {
     
     @IBAction func pressChangeSign(_ sender: Any) {
         //change the sign to either - or nothing
-        if Array(inputText)[0] == "-" {
-            inputText.remove(at: inputText.startIndex)
+        if inputText.contains("-") {
+            inputText.remove(at: inputText.firstIndex(of: "-")!)
         } else {
-            inputText = "-" + inputText
+            inputText.remove(at: inputText.startIndex)
+            inputText = " -" + inputText
         }
         refreshDisplay()
     }
