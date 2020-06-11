@@ -23,14 +23,28 @@ class ReversePolishNotationCalculatorUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // UI tests must launch the application that they test.
+    func testAllNumberButtonsDisabledIf3DigitNumberInputted() {
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let outputLabel = app.staticTexts["output"]
+        outputLabel.textFields = " 123"
+        
+        XCTAssertEqual(app.buttons["button1"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button2"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button3"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button4"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button5"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button6"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button7"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button8"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button9"].isEnabled, false)
+        XCTAssertEqual(app.buttons["button0"].isEnabled, false)
     }
+    
+    
+    
+    
 
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

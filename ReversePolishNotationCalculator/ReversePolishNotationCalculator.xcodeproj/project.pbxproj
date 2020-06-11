@@ -15,6 +15,7 @@
 		F230DD5524917065006BE385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F230DD5324917065006BE385 /* LaunchScreen.storyboard */; };
 		F230DD6024917066006BE385 /* ReversePolishNotationCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230DD5F24917066006BE385 /* ReversePolishNotationCalculatorTests.swift */; };
 		F230DD6B24917066006BE385 /* ReversePolishNotationCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230DD6A24917066006BE385 /* ReversePolishNotationCalculatorUITests.swift */; };
+		F232844A24929D05000B9950 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232844924929D05000B9950 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F230DD6624917066006BE385 /* ReversePolishNotationCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReversePolishNotationCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F230DD6A24917066006BE385 /* ReversePolishNotationCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversePolishNotationCalculatorUITests.swift; sourceTree = "<group>"; };
 		F230DD6C24917066006BE385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F232844924929D05000B9950 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				F230DD4824917063006BE385 /* AppDelegate.swift */,
 				F230DD4A24917063006BE385 /* SceneDelegate.swift */,
 				F230DD4C24917063006BE385 /* ViewController.swift */,
+				F232844924929D05000B9950 /* Calculator.swift */,
 				F230DD4E24917063006BE385 /* Main.storyboard */,
 				F230DD5124917065006BE385 /* Assets.xcassets */,
 				F230DD5324917065006BE385 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F230DD4D24917063006BE385 /* ViewController.swift in Sources */,
+				F232844A24929D05000B9950 /* Calculator.swift in Sources */,
 				F230DD4924917063006BE385 /* AppDelegate.swift in Sources */,
 				F230DD4B24917063006BE385 /* SceneDelegate.swift in Sources */,
 			);
