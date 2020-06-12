@@ -61,6 +61,41 @@ class ReversePolishNotationCalculatorUITests: XCTestCase {
         XCTAssertEqual(app.staticTexts["output"].label, " 58")
     }
     
+    func testAllNumberAndSignButtonsWork() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["button1"].tap()
+        app.buttons["button2"].tap()
+        app.buttons["button3"].tap()
+        
+        XCTAssertEqual(app.staticTexts["output"].label, " 123")
+        
+        app.buttons["buttonClear"].tap()
+        XCTAssertEqual(app.staticTexts["output"].label, "")
+        
+        app.buttons["button4"].tap()
+        app.buttons["button5"].tap()
+        app.buttons["button6"].tap()
+        
+        XCTAssertEqual(app.staticTexts["output"].label, " 456")
+        
+        app.buttons["buttonClear"].tap()
+        
+        app.buttons["button7"].tap()
+        app.buttons["button8"].tap()
+        app.buttons["button9"].tap()
+        
+        XCTAssertEqual(app.staticTexts["output"].label, " 789")
+        
+        app.buttons["buttonClear"].tap()
+        
+        app.buttons["button0"].tap()
+        
+        XCTAssertEqual(app.staticTexts["output"].label, " 0")
+        
+    }
+    
     
 
     func testLaunchPerformance() {
